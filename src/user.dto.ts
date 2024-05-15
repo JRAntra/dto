@@ -6,15 +6,16 @@ export class UserDTO {
 
     @MinLength(3)
     @MaxLength(8)
-    @IsString() username: string 
+    @IsString() 
+    readonly username: string 
 
     @IsNumber()
     @Min(12)
     @Max(100)
-    age : number;
+    readonly age : number;
 
     @IsString({each:true})
-    likeList: string[];
+    readonly likeList: string[];
 }
 
 export class PartialUserDTO extends PartialType(UserDTO){}
